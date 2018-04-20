@@ -1,0 +1,32 @@
+{% if subtitle %}
+	<h3>{{ VTI }} : <small class="text-muted">{{ subtitle }}</small></h3>
+{% else %}
+	<h3>{{ VTI }}</h3>
+{% endif %}
+
+<img src="{{ VTU.IUR }}" class="img-fluid mx-auto d-block">
+
+<div class="card">
+	<div class="card-header">
+		Resume
+	</div>
+	<div class="card-body">
+		<blockquote class="blockquote mb-0">
+			<p>{{ V7T }}</p>
+		</blockquote>
+	</div>
+</div>
+
+<div class="card-columns">
+{% for video in VSR %}
+	{% if video.quality != "XQ" %}
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">{{ video.versionLibelle }} {{ video.quality }}</h5>
+			<p class="card-text">{{ video.width }} x {{ video.height }}</p>
+			<a href="{{ video.url }}" download class="btn btn-primary">Download</a>
+		</div>
+	</div>
+	{% endif %}
+{% endfor %}
+</div>
